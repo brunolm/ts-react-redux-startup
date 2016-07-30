@@ -10,7 +10,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const pack = {
   context: __dirname,
   entry: {
-    app: ['./src/'],
+    app: ['babel-polyfill', './src/'],
   },
   output: {
     path: path.resolve('./dist'),

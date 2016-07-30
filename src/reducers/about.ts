@@ -8,7 +8,7 @@ const about = (state = InitialState, action) => {
   switch (action.type) {
     case 'ABOUT_ALERT_MESSAGE':
       return Object.assign(clone(state), {
-        message: `${Math.random()}`,
+        message: `Success: ${action.success} Message: ${Math.random()}`,
       });
     default:
       return InitialState;
