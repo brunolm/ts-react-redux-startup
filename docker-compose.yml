@@ -1,0 +1,11 @@
+local:
+  image: brunolm/node-image:6.2.0-onbuild
+  command: npm run dev
+  volumes:
+    - .:/usr/src/app
+  ports:
+    - 3000
+  environment:
+    NODE_ENV: development
+    VIRUTAL_PORT: 3000
+    VIRTUAL_HOST: local.brunolm.com
