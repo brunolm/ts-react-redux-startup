@@ -24,6 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "clone": "^1.0.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "history": "^3.0.0",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "@types/chai": "^3.4.29",
+    "@types/clone": "^0.1.29",
     "@types/express": "^4.0.29",
     "@types/history": "^2.0.29",
     "@types/mocha": "^2.2.28",

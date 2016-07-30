@@ -6,6 +6,7 @@
     "sourceMap": true,
     "jsx": "react",
     "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
     "outDir": "dist"
   },
   "exclude": [

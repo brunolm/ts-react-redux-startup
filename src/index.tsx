@@ -1,15 +1,17 @@
 import * as React from 'react';
+import { Provider } from 'react-redux';
 import { render } from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, browserHistory } from 'react-router';
+import { createStore } from 'redux';
 
-import App from './components/App';
-import About from './components/About';
-import NoMatch from './components/NoMatch';
+import { default as reducers } from './reducers';
+import Routes from './routes';
 
-render((
-  <Router history={ browserHistory }>
-    <Route path="/" component={ App } />
-    <Route path="/about" component={ About } />
-    <Route path="*" component={ NoMatch }/>
-  </Router>
-), document.getElementById('root'));
+const store = createStore(reducers);
+
+render(
+  <Provider store={ store } key="provider">
+    <Router history={ browserHistory } children={ Routes } />
+  </Provider>,
+  document.getElementById('root')
+);
