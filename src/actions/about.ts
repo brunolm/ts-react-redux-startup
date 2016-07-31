@@ -1,16 +1,21 @@
 import * as $ from 'jquery';
+import mirror from '../utils/mirror';
 
-export const ABOUT_ALERT_MESSAGE = 'ABOUT_ALERT_MESSAGE';
+export const types = mirror('About', {
+  Init: undefined,
+  GetDataSuccess: undefined,
+  GetDataError: undefined,
+});
 
 export function changeText() {
   return dispatch => {
     $.ajax({
       url: '/api/data',
       success() {
-        return dispatch({ type: ABOUT_ALERT_MESSAGE, success: true });
+        return dispatch({ type: types.GetDataSuccess, success: true });
       },
       error() {
-        return dispatch({ type: ABOUT_ALERT_MESSAGE, success: false });
+        return dispatch({ type: types.GetDataError, success: false });
       }
     });
   };
