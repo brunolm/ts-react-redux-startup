@@ -12,6 +12,10 @@
     "build:dev:watch": "webpack -w --env development --config webpack.config.development.js",
     "test": "mocha dist/spec"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brunolm/ts-react-redux-startup"
+  },
   "keywords": [
     "typescript",
     "react",
