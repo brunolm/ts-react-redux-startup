@@ -32,7 +32,7 @@ const pack = {
       },
       {
         test: /\.s?css$/,
-        loader: 'style!css!postcss',
+        loader: ExtractTextPlugin.extract({ fallbackLoader: 'style', loader: 'css!postcss' }),
         include: /src/,
       },
     ],
