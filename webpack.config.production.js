@@ -1,9 +1,13 @@
 const webpack = require('webpack');
 const pack = require('./webpack.config.js');
-
-// import * as webpack from 'webpack';
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 pack.plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true, compress: true }));
-// pack.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }));
+
+pack.plugins.push(
+  new OptimizeCssAssetsPlugin({
+    cssProcessorOptions: { discardComments: { removeAll: true } }
+  })
+);
 
 module.exports = pack;

@@ -1,7 +1,12 @@
-$green: green;
+$green: red;
 
 body {
   div {
+    border-radius: 10px;
     color: $green;
+  }
+
+  .flex-box-auto-prefixer {
+    display: flex;
   }
 }

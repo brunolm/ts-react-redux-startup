@@ -1,4 +1,4 @@
-const app = require('./app');
+import * as app from './app';
 
 app.use('/api', require('./src/api'));
 
