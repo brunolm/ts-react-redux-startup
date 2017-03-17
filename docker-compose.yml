@@ -1,6 +1,5 @@
 local:
   image: brunolm/node-image:6.2.0-onbuild
-  command: npm run dev
   volumes:
     - .:/usr/src/app
   ports:

@@ -1,9 +1,9 @@
-import * as path from 'path';
+import * as compression from 'compression';
 import * as express from 'express';
 import * as favicon from 'serve-favicon';
-import * as compression from 'compression';
-
+import * as path from 'path';
 import * as webpack from 'webpack';
+
 const vash = require('vash');
 
 const webpackConfig = require('./webpack.config.development');
@@ -20,8 +20,11 @@ if (process.env.NODE_ENV === 'development') {
     publicPath: webpackConfig.output.publicPath,
     hot: true,
     stats: {
-      colors: true
-    }
+      colors: true,
+    },
+    watchOptions: {
+      poll: 300, // docker support
+    },
   }));
 
   app.use(require('webpack-hot-middleware')(compiler));
