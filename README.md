@@ -170,3 +170,28 @@ Notes I took when creating this project
       - Don’t reassign the state, make a copy. Unless it falls on default which means “the dispatched action has nothing to do with this reducer so return the same state for it”
       - Keep in mind
         - Object.assign does not do a deep copy, that’s why I included clone
+
+### v1.1.0
+
+- Upgrade to `react-router` 4
+  - `browserHistory` no longer available
+    - Use `import { createBrowserHistory } from 'history';` instead
+  - Installed `react-router-redux`
+    - Use `import { syncHistoryWithStore } from 'react-router-redux';` to create redux routes
+    - Create `history` with `const history = syncHistoryWithStore(createBrowserHistory() as any, store);`
+    - Add `routing` to reducers
+      - `import { routerReducer as routing } from 'react-router-redux';`
+- Add ts-node and rename index and app to `.ts` files
+  - Change start script to use ts-node
+  - Add `ts-node*/` to gitignore
+- Add support for webpack-dev-middleware when using docker
+  - Add to middleware config `watchOptions: { poll: 300 }`
+- Change view engine default extension to `cshtml` intead of `vash`
+- Add `webpack-hot-middleware`
+  - Configure with `app.use(require('webpack-hot-middleware')(compiler));`
+  - On the startup react script added `module.hot.accept`
+- Migrate `webpack` to v2
+  - Custom properties are no longer allowed
+  - Loaders must include `-loader`
+  - Added postcss config on `LoaderOptionsPlugin`
+  - Removed invalid empty extension to resolve
