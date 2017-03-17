@@ -40,8 +40,8 @@ const pack = {
         postcss: [
           require('precss'),
           require('autoprefixer'),
-        ]
-      }
+        ],
+      },
     }),
     new ExtractTextPlugin({ filename: 'app.css', disable: false, allChunks: true }),
   ],

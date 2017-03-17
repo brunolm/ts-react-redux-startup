@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { Router, Route, browserHistory } from 'react-router';
 
-import App from './components/App';
 import About from './components/About';
+import App from './components/App';
 import NoMatch from './components/NoMatch';
+import { Route } from 'react-router';
 
 export default (
-  <Router history={ browserHistory }>
+  <Route path="/">
     <Route path="/" component={ App } />
     <Route path="/about" component={ About } />
     <Route path="*" component={ NoMatch }/>
-  </Router>
+  </Route>
 );
