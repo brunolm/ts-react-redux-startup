@@ -4,7 +4,8 @@
   "description": "TypeScript redux configuration project",
   "scripts": {
     "start": "ts-node index.ts",
-    "build": "npm run clean && npm run build:vendor && webpack --config webpack.config.js",
+    "build": "npm run clean && npm run build:vendor && npm run build:app",
+    "build:app": "webpack --config webpack.config.js",
     "build:vendor": "webpack --config webpack.config.vendor.js",
     "clean": "rimraf dist",
     "test": "mocha dist/spec"
