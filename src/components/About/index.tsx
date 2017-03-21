@@ -1,10 +1,10 @@
-import * as clone from 'clone';
 import * as React from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-
 import * as actions from '../../actions/about';
+import * as clone from 'clone';
+
 import Contact from './contact';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class About extends React.Component<any, any> {
   static propTypes = {

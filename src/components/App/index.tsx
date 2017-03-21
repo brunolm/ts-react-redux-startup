@@ -1,9 +1,10 @@
-import * as clone from 'clone';
-import * as React from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-
 import './index.scss';
+
+import * as React from 'react';
+import * as clone from 'clone';
+
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends React.Component<any, any> {
   static propTypes = {

@@ -195,3 +195,29 @@ Notes I took when creating this project
   - Loaders must include `-loader`
   - Added postcss config on `LoaderOptionsPlugin`
   - Removed invalid empty extension to resolve
+
+### v1.2.0
+
+- Optimize webpack to use DllPlugin
+  - Created a new webpack config file for vendor-only
+  - Added DllPlugin
+  - Referenced the Dll on the app webpack config file
+- Changed to `react-router-dom`
+  - Route structure changes
+- Added libraries
+  - react-router-dom
+  - node-sass
+    - peerDependency for sass-loader, allows the use of SASS
+  - bootstrap
+  - fontawesome
+  - jquery
+  - awesome-typescript-loader
+    - Better ts-loader which increases performance
+  - sass-loader
+    - Webpack loader for sass
+  - url-loader
+    - Transforms files into base64 urls, you can specify a limit and if it goes over then `file-loader` extracts as a file
+  - extendify
+    - Merge objects handling each type in a specific way
+    - Used to merge webpack configuration
+

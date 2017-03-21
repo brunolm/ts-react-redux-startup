@@ -6,7 +6,7 @@ import * as webpack from 'webpack';
 
 const vash = require('vash');
 
-const webpackConfig = require('./webpack.config.development');
+const webpackConfig = require('./webpack.config');
 
 const app = express();
 
