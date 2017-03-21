@@ -6,7 +6,7 @@ import * as clone from 'clone';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class App extends React.Component<any, any> {
+class Home extends React.Component<any, any> {
   static propTypes = {
     dispatch: React.PropTypes.func.isRequired,
     title: React.PropTypes.string.isRequired,
@@ -27,4 +27,4 @@ const mapStateToProps = state => {
   return Object.assign({}, clone(state.app));
 };
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps)(Home);

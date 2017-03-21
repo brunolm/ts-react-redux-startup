@@ -2,11 +2,11 @@ import './index.scss';
 
 import * as React from 'react';
 
-import { Link, Route, BrowserRouter as Router } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 
 import About from './components/About';
-import App from './components/App';
+import Home from './components/Home';
 import NoMatch from './components/NoMatch';
 import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
@@ -37,9 +37,11 @@ render(
           </div>
         </header>
         <main>
-          <Route exact path="/" component={ App } />
-          <Route path="/about" component={ About } />
-          <Route path="*" component={ NoMatch }/>
+          <Switch>
+            <Route exact path="/" component={ Home } />
+            <Route path="/about" component={ About } />
+            <Route path="*" component={ NoMatch }/>
+          </Switch>
         </main>
       </div>
     </Router>
