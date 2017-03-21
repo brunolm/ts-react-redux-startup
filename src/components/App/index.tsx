@@ -15,7 +15,7 @@ class App extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <h1>Hello World! { this.props.title }</h1>
+        <h1 className="color-test">Hello World! { this.props.title }</h1>
         <Link to={`/about`}>About Page</Link>
       </div>
     );
