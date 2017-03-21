@@ -5,7 +5,7 @@ TypeScript redux configuration project
 ## Build
 
 ```
-npm run build:dev:watch
+npm run build
 ```
 
 ## Run
@@ -204,6 +204,7 @@ Notes I took when creating this project
   - Referenced the Dll on the app webpack config file
 - Changed to `react-router-dom`
   - Route structure changes
+  - Added `Switch` ("The public API for rendering the first <Route> that matches.")
 - Added libraries
   - react-router-dom
   - node-sass
@@ -220,4 +221,4 @@ Notes I took when creating this project
   - extendify
     - Merge objects handling each type in a specific way
     - Used to merge webpack configuration
-
+- Changed code so it assumes development environment if `NODE_ENV` is not `production`
