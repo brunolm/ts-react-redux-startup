@@ -8,7 +8,7 @@ export default class Contact extends React.Component<any, any> {
   render() {
     return (
       <div>
-        <button onClick={ this.props.onClick }>Dispatch action to change the message bellow</button>
+        <button className="btn btn-primary" onClick={ this.props.onClick }>Dispatch action to change the message bellow</button>
         <p>
           { this.props.message }
         </p>

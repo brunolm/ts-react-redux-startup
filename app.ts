@@ -6,11 +6,11 @@ import * as webpack from 'webpack';
 
 const vash = require('vash');
 
-const webpackConfig = require('./webpack.config.development');
+const webpackConfig = require('./webpack.config');
 
 const app = express();
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   const compiler = webpack(webpackConfig);
 
   console.log('Using dev-middleware');
