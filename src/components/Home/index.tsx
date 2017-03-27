@@ -1,17 +1,29 @@
 import './index.scss';
 
 import * as React from 'react';
-import * as clone from 'clone';
 
 import { Link } from 'react-router-dom';
+import { RootState } from '../../reducers/index';
+import { RouteComponentProps } from 'react-router';
 import { connect } from 'react-redux';
 
-class Home extends React.Component<any, any> {
-  static propTypes = {
-    dispatch: React.PropTypes.func.isRequired,
-    title: React.PropTypes.string.isRequired,
-  };
+export namespace Home {
+  export interface Props extends RouteComponentProps<void> {
+    title: string;
+  }
 
+  export interface State {
+  }
+}
+
+const mapStateToProps = (state: RootState) => {
+  return {
+    ...state.home,
+  } as Home.State;
+};
+
+@(connect as any)(mapStateToProps)
+export default class Home extends React.Component<Home.Props, Home.State> {
   render() {
     return (
       <div>
@@ -21,10 +33,3 @@ class Home extends React.Component<any, any> {
     );
   }
 }
-
-
-const mapStateToProps = state => {
-  return Object.assign({}, clone(state.app));
-};
-
-export default connect(mapStateToProps)(Home);
