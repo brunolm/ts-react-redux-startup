@@ -1,10 +1,19 @@
+import { RouterState, routerReducer as routing } from 'react-router-redux';
+
+import { About } from '../components/About/index';
+import { Home } from '../components/Home/index';
 import { default as about } from './about';
-import { default as app } from './app';
 import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
+import { default as home } from './app';
+
+export interface RootState {
+  home: Home.State;
+  about: About.State;
+  routing: RouterState;
+}
 
 const App = combineReducers({
-  app,
+  home,
   about,
   routing,
 });

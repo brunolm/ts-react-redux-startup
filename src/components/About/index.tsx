@@ -3,17 +3,31 @@ import * as actions from '../../actions/about';
 import * as clone from 'clone';
 
 import Contact from './contact';
+import { Dispatch } from 'redux';
 import { Link } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router';
 import { connect } from 'react-redux';
 
-class About extends React.Component<any, any> {
-  static propTypes = {
-    dispatch: React.PropTypes.func.isRequired,
-    message: React.PropTypes.string.isRequired,
-  };
+export namespace About {
+  export interface Props extends RouteComponentProps<void> {
+    dispatch: Dispatch<any>;
+    message: string;
+  }
+  export interface State {
+  }
+}
 
+const mapStateToProps = state => {
+  return {
+    ...clone(state.about),
+  };
+};
+
+@(connect as any)(mapStateToProps)
+export default class About extends React.Component<About.Props, About.State> {
   render() {
     const { dispatch, message } = this.props;
+
     return (
       <div>
         <p>This is the about page</p>
@@ -44,9 +58,3 @@ class About extends React.Component<any, any> {
     );
   }
 }
-
-const mapStateToProps = state => {
-  return Object.assign({}, clone(state.about));
-};
-
-export default connect(mapStateToProps)(About);

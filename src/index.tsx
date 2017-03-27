@@ -2,7 +2,7 @@ import './index.scss';
 
 import * as React from 'react';
 
-import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Link, Route, Router, Switch } from 'react-router-dom';
 import { applyMiddleware, createStore } from 'redux';
 
 import About from './components/About';
@@ -12,11 +12,13 @@ import { Provider } from 'react-redux';
 import { createBrowserHistory } from 'history';
 import { default as reducers } from './reducers';
 import { render } from 'react-dom';
-import { syncHistoryWithStore } from 'react-router-redux';
 import thunk from 'redux-thunk';
 
 const store = createStore(reducers, applyMiddleware(thunk));
-const history = syncHistoryWithStore(createBrowserHistory() as any, store);
+const history = createBrowserHistory();
+
+// http://stackoverflow.com/q/43057911/340760
+// const history = syncHistoryWithStore(createBrowserHistory() as any, store);
 
 render(
   <Provider store={ store } key="provider">

@@ -1,11 +1,12 @@
 import * as clone from 'clone';
+
 import { types } from '../actions/app';
 
 const InitialState = {
   title: 'TypeScript rocks!',
 };
 
-const app = (state = InitialState, action) => {
+const home = (state = InitialState, action) => {
   switch (action.type) {
     case types.Init:
       return clone(InitialState);
@@ -14,4 +15,4 @@ const app = (state = InitialState, action) => {
   }
 };
 
-export default app;
+export default home;

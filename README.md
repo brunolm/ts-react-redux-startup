@@ -222,3 +222,10 @@ Notes I took when creating this project
     - Merge objects handling each type in a specific way
     - Used to merge webpack configuration
 - Changed code so it assumes development environment if `NODE_ENV` is not `production`
+
+
+### v1.3.0
+
+- Components now have typed `props` and `state`
+  - Had to use `(connect as any)` as the definitions are not working in the current scenario
+- Added `experimentalDecorators` to allow `@connect` above the component rather than exporting bellow as a function call

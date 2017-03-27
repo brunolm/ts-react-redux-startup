@@ -1,10 +1,16 @@
 import * as React from 'react';
 
-export default class Contact extends React.Component<any, any> {
-  static propTypes = {
-    message: React.PropTypes.string.isRequired,
-  };
+export namespace Contact {
+  export interface Props {
+    message: string;
+    onClick: (e?: React.MouseEvent<HTMLButtonElement>) => any;
+  }
 
+  export interface State {
+  }
+}
+
+export default class Contact extends React.Component<Contact.Props, Contact.State> {
   render() {
     return (
       <div>
