@@ -229,3 +229,11 @@ Notes I took when creating this project
 - Components now have typed `props` and `state`
   - Had to use `(connect as any)` as the definitions are not working in the current scenario
 - Added `experimentalDecorators` to allow `@connect` above the component rather than exporting bellow as a function call
+
+### v1.4.0
+
+- Add fontawesome example
+- Fix bootstrap
+- Refactor actions, reducer
+- Update tslint
+- Add sass lint and lint scripts
