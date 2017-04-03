@@ -1,7 +1,9 @@
+@import '~bootstrap/scss/_variables.scss'; // sass-lint:disable-line clean-import-paths
+
 body {
   header {
-    background: #000;
-    color: #fff;
+    background: $black;
+    color: $white;
     padding: 20px;
 
     nav {

@@ -1,6 +1,6 @@
 {
   "name": "ts-react-redux-startup",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "TypeScript redux configuration project",
   "scripts": {
     "start": "ts-node index.ts",
@@ -8,7 +8,10 @@
     "build:app": "webpack --config webpack.config.js",
     "build:vendor": "webpack --config webpack.config.vendor.js",
     "clean": "rimraf dist",
-    "test": "mocha dist/spec"
+    "test": "npm run lint && mocha dist/spec",
+    "lint": "npm run lint:sass && npm run lint:ts",
+    "lint:ts": "tslint src/**/*.ts{,x}",
+    "lint:sass": "sass-lint -v"
   },
   "repository": {
     "type": "git",
@@ -79,6 +82,7 @@
     "postcss-loader": "^1.3.3",
     "precss": "^1.4.0",
     "rimraf": "^2.6.1",
+    "sass-lint": "^1.10.2",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
     "tslint": "^4.5.1",

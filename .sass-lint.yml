@@ -1,0 +1,6 @@
+files:
+  include: '**/*.scss'
+  ignore:
+    - '**/node_modules/**/*.scss'
+rules:
+  nesting-depth: 0
