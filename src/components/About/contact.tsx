@@ -5,12 +5,9 @@ export namespace Contact {
     message: string;
     onClick: (e?: React.MouseEvent<HTMLButtonElement>) => any;
   }
-
-  export interface State {
-  }
 }
 
-export default class Contact extends React.Component<Contact.Props, Contact.State> {
+export default class Contact extends React.Component<Contact.Props, { }> {
   render() {
     return (
       <div>

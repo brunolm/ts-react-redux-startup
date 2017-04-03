@@ -11,19 +11,16 @@ export namespace Home {
   export interface Props extends RouteComponentProps<void> {
     title: string;
   }
-
-  export interface State {
-  }
 }
 
 const mapStateToProps = (state: RootState) => {
   return {
     ...state.home,
-  } as Home.State;
+  };
 };
 
 @(connect as any)(mapStateToProps)
-export default class Home extends React.Component<Home.Props, Home.State> {
+export default class Home extends React.Component<Home.Props, { }> {
   render() {
     return (
       <div>

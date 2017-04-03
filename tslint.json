@@ -1,19 +1,22 @@
 {
+  "extends": [
+    "tslint:latest"
+  ],
   "rules": {
-    "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
+    "arrow-parens": false,
+    "interface-name": [
+      false
     ],
-    "indent": [
-      true,
-      "spaces"
+    "max-line-length": [
+      500
     ],
-    "no-duplicate-variable": true,
-    "no-eval": true,
-    "no-internal-module": true,
-    "no-trailing-whitespace": true,
-    "no-var-keyword": true,
+    "member-access": [
+      false
+    ],
+    "no-conditional-assignment": false,
+    "no-namespace": [
+      false
+    ],
     "no-unused-variable": [
       true,
       "react"
@@ -23,40 +26,13 @@
       "check-open-brace",
       "check-whitespace"
     ],
+    "ordered-imports": [
+      false
+    ],
     "quotemark": [
       true,
       "single",
       "jsx-double"
-    ],
-    "semicolon": [
-      true,
-      "always"
-    ],
-    "triple-equals": [
-      true,
-      "allow-null-check"
-    ],
-    "typedef-whitespace": [
-      true,
-      {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      }
-    ],
-    "variable-name": [
-      true,
-      "ban-keywords"
-    ],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
     ]
   }
 }

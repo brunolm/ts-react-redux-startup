@@ -11,9 +11,8 @@ import { connect } from 'react-redux';
 export namespace About {
   export interface Props extends RouteComponentProps<void> {
     dispatch: Dispatch<any>;
+    loading: boolean;
     message: string;
-  }
-  export interface State {
   }
 }
 
@@ -24,9 +23,16 @@ const mapStateToProps = state => {
 };
 
 @(connect as any)(mapStateToProps)
-export default class About extends React.Component<About.Props, About.State> {
+export default class About extends React.Component<About.Props, { }> {
+  click = e => console.log(this, e); // tslint:disable-line
+
   render() {
     const { dispatch, message } = this.props;
+    const list = [
+      { id: 1, name: 'Name 1' },
+      { id: 2, name: 'Name 2' },
+      { id: 3, name: 'Name 3' },
+    ];
 
     return (
       <div>
@@ -43,6 +49,11 @@ export default class About extends React.Component<About.Props, About.State> {
         <h3>List</h3>
         <ul>
           <li><Link to={`/`}>Go home you are drunk!</Link></li>
+          {
+            list.map(item =>
+              <li key={ item.id } onClick={ this.click }>{ item.name }</li>,
+            )
+          }
           <li><Link to={`/void`}>Go to the void!</Link></li>
         </ul>
         <p>&nbsp;</p>
@@ -54,6 +65,7 @@ export default class About extends React.Component<About.Props, About.State> {
             }
           }
         />
+        Loading: { this.props.loading.toString() }
       </div>
     );
   }
