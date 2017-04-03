@@ -21,6 +21,8 @@ module.exports = {
       'font-awesome/scss/font-awesome.scss',
       'bootstrap/scss/bootstrap.scss',
       'jquery',
+      'tether',
+      'bootstrap/dist/js/bootstrap',
       'history',
       'react',
       'react-dom',
@@ -30,6 +32,8 @@ module.exports = {
       'react-router-dom',
       'react-router-redux',
       'redux-thunk',
+      'classnames',
+      'mirror-keys',
     ],
   },
   output: {
@@ -39,6 +43,12 @@ module.exports = {
   },
   plugins: [
     extractCSS,
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      jquery: 'jquery',
+      Tether: 'tether',
+    }),
     new webpack.DllPlugin({
       path: path.join(__dirname, 'dist', '[name]-manifest.json'),
       name: '[name]_[hash]',

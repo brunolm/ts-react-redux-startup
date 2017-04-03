@@ -1,5 +1,6 @@
 import './index.scss';
 
+import * as $ from 'jquery';
 import * as React from 'react';
 
 import { Link, Route, Router, Switch } from 'react-router-dom';
@@ -13,6 +14,8 @@ import { createBrowserHistory } from 'history';
 import { default as reducers } from './reducers';
 import { render } from 'react-dom';
 import thunk from 'redux-thunk';
+
+(window as any).jQuery = (window as any).$ = $;
 
 const store = createStore(reducers, applyMiddleware(thunk));
 const history = createBrowserHistory();

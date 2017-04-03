@@ -65,7 +65,13 @@ export default class About extends React.Component<About.Props, { }> {
             }
           }
         />
+        { this.props.loading &&
+          <div>
+            <i className="fa fa-spinner fa-spin mr-2" aria-hidden="true"></i> Loading...
+          </div>
+        }
         Loading: { this.props.loading.toString() }
+
       </div>
     );
   }
